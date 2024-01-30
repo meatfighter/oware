@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458332 26.458334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="mask-icon.svg"
+   inkscape:export-filename="C:\js-projects\oware\apple-touch-icon.png"
+   inkscape:export-xdpi="184.32001"
+   inkscape:export-ydpi="184.32001"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="6.2217172"
+     inkscape:cx="55.370566"
+     inkscape:cy="50.950564"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-bottom="0"
+     fit-margin-right="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-78.502571,-91.898201)">
+    <path
+       id="rect1158"
+       style="fill:#000000;fill-opacity:1;stroke-width:1.2"
+       d="M 20,0 C 8.9200002,0 0,8.9200002 0,20 v 60 c 0,11.08 8.9200002,20 20,20 h 60 c 11.08,0 20,-8.92 20,-20 V 20 C 100,8.9200002 91.08,0 80,0 Z M 50,43.75 A 6.2500002,6.2500002 0 0 1 56.25,50 6.2500002,6.2500002 0 0 1 50,56.25 6.2500002,6.2500002 0 0 1 43.75,50 6.2500002,6.2500002 0 0 1 50,43.75 Z"
+       transform="matrix(0.26458333,0,0,0.26458333,78.502571,91.898201)" />
+  </g>
+</svg>

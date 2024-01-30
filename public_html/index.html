@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="date" content="2024-01-29">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1E1F22">
+
+    <link rel="stylesheet" href="styles/index.css?v=2024-01-29" type="text/css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="mask-icon.svg" color="#000000">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Reem+Kufi+Fun:wght@500&display=swap" rel="stylesheet">
+
+    <title>Oware</title>
+</head>
+<body>
+
+<p class="title">Oware</p>
+
+<button id="play-button">Play</button>
+
+<p>Oware is a two-player strategy game played with forty-eight identical game pieces, called &ldquo;seeds&rdquo;, and a board with twelve seed compartments, called &ldquo;houses&rdquo;, arranged into two rows of six, like the cells of an egg carton. The board represents a circular chain of twelve houses, where the neighboring ends of the rows are linked.</p>
+
+<p>The board also has a &ldquo;score house&rdquo; at each end for storing seeds removed from play.</p>
+
+<p>The players face opposite sides of the board, each controlling the houses of the row nearest to them and the score house to their right.</p>
+
+<p>The game starts with four seeds in each house. After arbitrarily selecting who plays first, the players alternate moves. To move, a player &ldquo;collects&rdquo;, &ldquo;sows&rdquo;, and possibly &ldquo;captures&rdquo; seeds.</p>
+
+<p>To collect, a player removes the full contents of a nonempty house in their row, rendering that &ldquo;source house&rdquo; empty.</p>
+
+<p>To sow, a player drops one of the collected seeds into each house along a contiguous counterclockwise path around the board, starting with the house neighboring the source house. If the player has enough seeds to loop around the board, the source house is skipped, keeping it empty after sowing.</p>
+
+<p>While sowing, if the final seed drops into an opponent&rsquo;s house and the drop increases that house&rsquo;s seed count to two or three, then the player captures all seeds in that house. The captured seeds are placed into the player&rsquo;s score house, permanently removing them from play.</p>
+
+<p>After capturing a house, the player inspects the previously sown house (the neighbor in the clockwise direction). If it's also an opponent&rsquo;s house and it also contains exactly two or three seeds, then the player captures those seeds as well. That process is repeated until the player arrives at a house not belonging to the opponent or at a house not containing exactly two or three seeds.</p>
+
+<p>However, after sowing and before capturing, the player verifies that capturing would leave at least one seed in the opponent&rsquo;s row, enabling the opponent to make the successive move. If that is not the case, then the player forfeits capturing, leaving the sown seeds in place.</p>
+
+<p>Similarly, before collecting, if the opponent&rsquo;s row is completely empty, the player must make a move that leaves at least one seed in the opponent&rsquo;s row. If no such move exists, then the player captures all seeds in their row, ending the game.</p>
+
+<p>If a position repeats three times, and it is a position with at least one seed in both rows, and the same player moved into the position all three times (though not necessarily by making identical moves), then the game automatically ends due to lack of progress. In that situation, each player captures all seeds in their row.</p>
+
+<p>A player wins by capturing twenty-five or more seeds. If both players end up with twenty-four seeds, then it&rsquo;s a draw.</p>
+
+<p>This implementation of Oware offers nineteen difficulty levels against an AI opponent. It indicates a win by rendering a circle under the victor&rsquo;s score house, and a draw by rendering a semicircle under both score houses. Before those outcomes, it renders a rectangle beneath the score house of a player that can force a win, or rectangles beneath both players&rsquo; score houses if a player can force a draw.</p>
+
+<hr>
+<table class="copyright">
+    <tr><td><p class="copyright">&copy; 2024 meatfighter.com<br>This content is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="SA"></a></p></td><td><p class="home"><a href="https://github.com/meatfighter/oware" target="_blank">Source</a>&nbsp;|&nbsp;<a href="https://meatfighter.com">Home</a></p></td></tr>
+</table>
+
+<script src="scripts/index.bundle.js?v=2023-12-24"></script>
+</body>
+</html>

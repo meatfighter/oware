@@ -1,0 +1,19 @@
+{
+  "name": "oware",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf public_html/scripts/*",
+    "pack": "npx webpack --mode production",
+    "build": "npm run clean && npm run pack"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
+}
