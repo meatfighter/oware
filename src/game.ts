@@ -127,6 +127,7 @@ export function windowResized() {
     }
     canvas.width = canvas.height = 1;
 
+    const dpr = window.devicePixelRatio || 1;
     const innerWidth = window.innerWidth;
     const innerHeight = window.innerHeight;
 
@@ -169,8 +170,8 @@ export function windowResized() {
         height = t;
     }
 
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = Math.floor(width);
+    canvas.height = Math.floor(height);
 
     ctx = canvas.getContext('2d');
     if (!ctx) {
