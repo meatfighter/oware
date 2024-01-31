@@ -8,13 +8,10 @@
 body {
     background-color: #1E1F22;
     color: #B5B5B5;
-    margin: 0;
     padding: 0;
-    user-select: none;
     font-family: 'Open Sans', sans-serif;
     max-width: 978px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 p {

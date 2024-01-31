@@ -83,10 +83,13 @@ export function enter() {
         const rect = canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        if (canvas.width >= canvas.height) {
-            canvasClicked(Render.WIDTH * x / (canvas.width - 1), Render.HEIGHT * y / (canvas.height - 1));
+        const dpr = window.devicePixelRatio || 1;
+        const width = Math.floor(canvas.width / dpr);
+        const height = Math.floor(canvas.height / dpr);
+        if (width >= height) {
+            canvasClicked(Render.WIDTH * x / (width - 1), Render.HEIGHT * y / (height - 1));
         } else {
-            canvasClicked(Render.WIDTH * (1 - y / (canvas.height - 1)), Render.HEIGHT * x / (canvas.width - 1));
+            canvasClicked(Render.WIDTH * (1 - y / (height - 1)), Render.HEIGHT * x / (width - 1));
         }
     });
     windowResized();
@@ -147,7 +150,7 @@ export function windowResized() {
             scale = height / Render.HEIGHT;
             width = scale * Render.WIDTH;
         }
-        transform.a = transform.d = scale;
+        transform.a = transform.d = dpr * scale;
         transform.b = transform.c = transform.e = transform.f = 0;
     } else {
         let scale = 1;
@@ -162,16 +165,19 @@ export function windowResized() {
             width = scale * Render.WIDTH;
         }
         transform.a = transform.d = transform.e = 0;
-        transform.b = -scale;
-        transform.c = scale;
-        transform.f = width;
+        transform.b = -dpr * scale;
+        transform.c = dpr * scale;
+        transform.f = dpr * width;
         let t = width;
         width = height as number;
         height = t;
     }
 
-    canvas.width = Math.floor(width);
-    canvas.height = Math.floor(height);
+    canvas.style.width = `${Math.floor(width)}px`;
+    canvas.style.height = `${Math.floor(height)}px`;
+
+    canvas.width = Math.floor(dpr * width);
+    canvas.height = Math.floor(dpr * height);
 
     ctx = canvas.getContext('2d');
     if (!ctx) {
