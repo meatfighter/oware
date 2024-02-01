@@ -8,6 +8,7 @@ import {
 import { enter as enterQuit, windowResized as quitWindowResized } from "./quit";
 import { Player } from "./tree-node";
 import {stopAnimation} from "./animate";
+import {NoParamVoidFunc} from "./no-param-void-func";
 
 enum Page {
     START,
@@ -16,8 +17,11 @@ enum Page {
 }
 
 let page = Page.START;
+
 let wakeLock: WakeLockSentinel | null = null;
 let acquiringWaitLock = false;
+
+let removeMediaEventListener: NoParamVoidFunc | null = null;
 
 export function onStartButtonClicked(firstPlayer: Player, depth: number) {
     page = Page.GAME;
@@ -93,6 +97,17 @@ function releaseWakeLock() {
     }
 }
 
+const updatePixelRatio = () => {
+    if (removeMediaEventListener != null) {
+        removeMediaEventListener();
+    }
+    const media = matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+    media.addEventListener("change", updatePixelRatio);
+    removeMediaEventListener = () => media.removeEventListener("change", updatePixelRatio);
+
+    windowResized();
+};
+
 function init() {
     document.addEventListener('dblclick', e => e.preventDefault(), { passive: false });
     document.addEventListener('visibilitychange', () => {
@@ -102,6 +117,7 @@ function init() {
     });
     window.addEventListener('resize', windowResized);
     enterStart();
+    updatePixelRatio();
 }
 
 document.addEventListener('DOMContentLoaded', init);
