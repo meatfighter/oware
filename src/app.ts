@@ -7,8 +7,8 @@ import {
 } from "./game";
 import { enter as enterQuit, windowResized as quitWindowResized } from "./quit";
 import { Player } from "./tree-node";
-import {stopAnimation} from "./animate";
-import {NoParamVoidFunc} from "./no-param-void-func";
+import { stopAnimation } from "./animate";
+import { NoParamVoidFunc } from "./no-param-void-func";
 
 enum Page {
     START,
@@ -22,6 +22,8 @@ let wakeLock: WakeLockSentinel | null = null;
 let acquiringWaitLock = false;
 
 let removeMediaEventListener: NoParamVoidFunc | null = null;
+
+let lastTouchEnd = 0;
 
 export function onStartButtonClicked(firstPlayer: Player, depth: number) {
     page = Page.GAME;
@@ -110,6 +112,7 @@ const updatePixelRatio = () => {
 
 function init() {
     document.addEventListener('dblclick', e => e.preventDefault(), { passive: false });
+    window.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible' && page !== Page.START) {
             acquireWakeLock();

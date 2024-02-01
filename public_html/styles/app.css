@@ -16,7 +16,7 @@ body {
 
 @media (pointer: coarse) {
     html, body {
-        touch-action: manipulation;
+        touch-action: none;
     }
 }
 
