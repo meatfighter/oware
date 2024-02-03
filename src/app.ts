@@ -23,8 +23,6 @@ let acquiringWaitLock = false;
 
 let removeMediaEventListener: NoParamVoidFunc | null = null;
 
-let lastTouchEnd = 0;
-
 export function onStartButtonClicked(firstPlayer: Player, depth: number) {
     page = Page.GAME;
     acquireWakeLock();
