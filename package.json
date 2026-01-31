@@ -1,6 +1,6 @@
 {
   "name": "oware",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A strategy game played with seeds and a board with twelve seed compartments.",
   "repository": {
     "type": "git",
